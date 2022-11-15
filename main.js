@@ -55,6 +55,12 @@ function closeopeneye() {
     }, 2000);
 }
 
+function maxlenthemail() {
+    if (emailFiled.value.length > 30) {
+        emailFiled.value = emailFiled.value.substring(0, 30);
+    }
+}
+
 emailFiled.onfocus = () => {
     if (emailFiled.value == "") {
         lEyelens.style.cssText = "top: 2px; left: 1px;";
@@ -76,6 +82,17 @@ emailFiled.onfocus = () => {
         flower.classList.remove('rotate');
     }
 }
+
+emailFiled.addEventListener('keyup', () => {
+    moveface();
+    maxlenthemail();
+});
+emailFiled.addEventListener('blur', () => {
+    normalface();
+    if (emailFiled.value == "") {
+    emailLabel.style.cssText = 'top:11px; color: #777;';
+    }
+});
 
 function normalface() {
     rEyelens.style.cssText = 'top: 1px; left: 7px;';
@@ -100,14 +117,6 @@ function moveface() {
     mouth.style.cssText = `left:${Math.ceil(50 + (x * 1.3))}px; top:80px; height:${Math.ceil(x * 1.3)}px;`;
     nose.style.cssText = `left:${65 + x}px; top:68px; border-width: 0px ${Math.ceil(8 - (x * 0.3))}px 8px ${Math.ceil(4 + (x * 0.3))}px;`;
 }
-
-emailFiled.addEventListener('keyup', moveface);
-emailFiled.addEventListener('blur', () => {
-    normalface();
-    if (emailFiled.value == "") {
-    emailLabel.style.cssText = 'top:11px; color: #777;';
-    }
-});
 
 hideshowpass.forEach((e) => {
     e.onclick = () =>{
