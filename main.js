@@ -71,6 +71,10 @@ emailFiled.onfocus = () => {
     }
     emailLabel.style.cssText = 'top:-11px; color: #972983;';
     fpassoff();
+    if (checkbox.checked == true) {
+        flower.classList.add('checkedmove');
+        flower.classList.remove('rotate');
+    }
 }
 
 function normalface() {
