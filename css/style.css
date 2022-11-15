@@ -304,19 +304,19 @@ form .anime img {
 .anime .l-eye,
 .anime .r-eye {
     position: absolute;
-    width: 20px;
-    height: 8px;
+    width: 18px;
+    height: 6px;
     background-color: white;
-    border: 1px solid #850C8E;
+    outline: 1px solid #850C8E;
     top: 52px;
-    left: 45px;
+    left: 46px;
     overflow: hidden;
     transform: scale(1.4);
     transition: var(--main-transition) ease;
 }
 
 .anime .r-eye {
-    left: 83px;
+    left: 84px;
 }
 
 .anime .l-eye img,
@@ -332,7 +332,7 @@ form .anime img {
 .anime .l-eye .l-eyedown,
 .anime .r-eye .r-eyedown {
     position: absolute;
-    width: 20px;
+    width: 18px;
     height: 0px;
     background-color: #850C8E;
     z-index: 1;

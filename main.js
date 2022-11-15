@@ -97,8 +97,8 @@ emailFiled.addEventListener('blur', () => {
 function normalface() {
     rEyelens.style.cssText = 'top: 1px; left: 7px;';
     lEyelens.style.cssText = 'top: 1px; left: 7px;';
-    rEye.style.cssText = 'left:83px; top:52px;';
-    lEye.style.cssText = 'left:45px; top:52px;';
+    rEye.style.cssText = 'left:84px; top:52px;';
+    lEye.style.cssText = 'left:46px; top:52px;';
     rBrow.style.cssText = 'right:48px; top:38px';
     lBrow.style.cssText =  'left:47px; top:38px';
     mouth.style.cssText = 'left: 60px; top:75px; height:0px;';
@@ -111,7 +111,7 @@ function moveface() {
     rEyelens.style.cssText = `top: 2px; left: ${x}px;`;
     lEyelens.style.cssText = `top: 2px; left: ${x}px;`;
     rEye.style.cssText = `left:${75 + x}px; top:60px; border-radius: 5px;`;
-    lEye.style.cssText = `left:${45 + x}px; top:60px; border-radius: 5px;`;
+    lEye.style.cssText = `left:${46 + x}px; top:60px; border-radius: 5px;`;
     rBrow.style.cssText = `right:${55 - x}px; top:45px`;
     lBrow.style.cssText = `left:${47 + x}px; top:45px`;
     mouth.style.cssText = `left:${Math.ceil(50 + (x * 1.3))}px; top:80px; height:${Math.ceil(x * 1.3)}px;`;
