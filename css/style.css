@@ -1,0 +1,560 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    font-family: 'cairo', 'sans-serif';
+    background-color: #F9F9F9;
+}
+
+:root {
+    --main-transition: 0.3s;
+}
+
+form {
+    background-color: white;
+    width: 350px;
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+form .formhead {
+    text-align: center;
+    color: #972983;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+form .anime {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 150px;
+    height: 135px;
+    margin: 30px auto;
+    z-index: 1;
+    top: 0;
+    transition: 0.2s 0.3s ease-in-out;
+}
+
+form .anime.passmove {
+    transition: 0.2s 0.5s ease-in-out;
+    top: 20px;
+}
+
+form .anime img {
+    position: absolute;
+}
+
+.anime .passface .pf-img {
+    width: 45px;
+    top: 36px;
+    left: 13px;
+    opacity: 0;
+    transition: 0.1s 0.5s linear;
+    z-index: 1;
+}
+
+.anime .passface .pf-img.passmove {
+    transition: 0.1s 0.3s linear;
+    opacity: 1;
+}
+
+.anime .passface .pf-eyelip {
+    width: 23px;
+    top: 56px;
+    left: 35px;
+    height: 0px;
+    z-index: 1;
+    transition: 0.3s ease-in-out;
+}
+
+.pf-eyelip.eyemovedown {
+    animation: passeye 0.3s alternate ease-in-out;
+}
+
+@keyframes passeye {
+    to {
+        height: 15px;
+    }
+}
+
+.anime .passface .pf-leg {
+    width: 17px;
+    bottom: 21px;
+    left: 13px;
+    transform-origin: right bottom;
+    transform: rotateY(90deg);
+    z-index: -1;
+    transition: 0.2s linear;
+}
+
+.anime .passface .pf-leg.passmove {
+    transition: 0.2s 0.6s linear;
+    transform: rotateY(0deg);
+}
+
+.anime .body {
+    width: 100px;
+    opacity: 1;
+    transition: 0.3s ease;
+}
+
+.op-0 {
+    opacity: 0 !important;
+}
+
+.scale-0 {
+    transform: scale(0) !important;
+}
+
+.anime .face {
+    transform-origin: 40px center;
+    position: relative;
+    width: 150px;
+    height: 135px;
+    opacity: 1;
+    transition: transform 0.4s 0.5s ease, opacity 0.1s 0.1s ease;
+}
+
+.anime .face.passmove {
+    transition: transform 0.4s 0.1s ease, opacity 0.1s 0.3s ease;
+    transform: rotateY(90deg);
+    opacity: 0;
+}
+
+.anime .leg {
+    width: 30px;
+    bottom: 0;
+    left: 60px;
+    z-index: -1;
+    transition: 0.2s 0.3s linear, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.anime .leg.passmove {
+    transition: 0.2s 0.5s linear;
+    bottom: 21px;
+}
+
+.anime .l-wing {
+    width: 25px;
+    left: 10px;
+    bottom: 40px;
+    z-index: -1;
+    transform-origin: right center;
+    transition: 0.3s 0.5s linear;
+    transform: rotateY(0deg);
+}
+
+.anime .l-wing.passmove {
+    transition: 0.3s linear;
+    transform: rotateY(90deg);
+}
+
+.anime .l-wing.fpassmove {
+    transition: 0.1s ease;
+    transform: rotateY(90deg);
+}
+
+.anime .l-wing.welcome {
+    animation: l-wing 0.3s 5 alternate linear;
+}
+
+.anime .l-wing.flowermove {
+    animation: l-wingflower 1s alternate linear;
+}
+
+@keyframes l-wing {
+    0% {
+        transform: rotate(15deg);
+    }
+    100% {
+        transform: rotate(-15deg);
+    }
+}
+
+@keyframes l-wingflower {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(90deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+.anime .l-fpasswing {
+    width: 34px;
+    bottom: 35px;
+    left: 7px;
+    transform-origin: right center;
+    transform: rotate(23deg);
+    transition: 0.3s ease;
+    opacity: 0;
+}
+
+.anime .l-fpasswing.fpass-move {
+    opacity: 1;
+    bottom: 50px;
+    left: 15px;
+    transform: rotate(-75deg);
+}
+
+.anime .r-wing {
+    width: 34px;
+    bottom: 28px;
+    right: 22px;
+    transform-origin: left center;
+    transform: rotate(0deg);
+    transition: 0.3s ease;
+    opacity: 1;
+}
+
+.anime .r-wing.fpass-move {
+    bottom: 50px;
+    right: 15px;
+    transform: rotate(75deg);
+}
+
+.anime .crest {
+    width: 30px;
+    top: 8px;
+    right: 27px;
+    z-index: -1;
+    transform-origin: left bottom;
+    transition: 0.4s 0.5s linear;
+    animation: rot-5 3s infinite alternate linear;
+}
+
+.anime .crest.passmove {
+    transition: 0.4s 0.1s linear;
+    z-index: 1;
+    width: 32px;
+    right: 40px;
+}
+
+@keyframes rot-5 {
+    0% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+.anime .tail {
+    width: 30px;
+    bottom: 27px;
+    right: 13px;
+    z-index: -1;
+    opacity: 1;
+    transition: 0.3s ease;
+}
+
+.anime .fpassface img {
+    position: absolute;
+    top: 42px;
+    width: 22px;
+    transform: scale(0);
+    transition: 0.3s 0.3s ease;
+}
+
+.anime .fpassface .l-xeye {
+    left: 48px;
+}
+
+.anime .fpassface .r-xeye {
+    right: 43px;
+}
+
+.fpass-scale {
+    animation: fpassscale 0.3s 0.3s infinite alternate ease;
+}
+
+@keyframes fpassscale {
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.anime .l-brow {
+    width: 20px;
+    top: 38px;
+    left: 47px;
+    transition: var(--main-transition) ease;
+}
+
+.anime .r-brow {
+    width: 20px;
+    top: 38px;
+    right: 48px;
+    transition: var(--main-transition) ease;
+}
+
+.anime .l-eye,
+.anime .r-eye {
+    position: absolute;
+    width: 20px;
+    height: 8px;
+    background-color: white;
+    border: 1px solid #850C8E;
+    top: 52px;
+    left: 45px;
+    overflow: hidden;
+    transform: scale(1.4);
+    transition: var(--main-transition) ease;
+}
+
+.anime .r-eye {
+    left: 83px;
+}
+
+.anime .l-eye img,
+.anime .r-eye img {
+    width: 4px;
+    top: 1px;
+    left: 7px;
+    transition: var(--main-transition) ease;
+}
+
+.anime .l-eye .l-eyeup,
+.anime .r-eye .r-eyeup,
+.anime .l-eye .l-eyedown,
+.anime .r-eye .r-eyedown {
+    position: absolute;
+    width: 20px;
+    height: 0px;
+    background-color: #850C8E;
+    z-index: 1;
+}
+
+.anime .l-eye .l-eyedown,
+.anime .r-eye .r-eyedown {
+    bottom: 0;
+}
+
+.eyemove.fade-eye {
+    animation: eye 0.3s alternate ease-in-out;
+}
+
+@keyframes eye {
+    to {
+        height: 4px;
+    }
+}
+
+.anime .mouth {
+    position: absolute;
+    top: 75px;
+    left: 60px;
+    width: 30px;
+    height: 0px;
+    background-color: #ff554d;
+    border-radius: 10px 10px 15px 15px;
+    box-shadow: inset 0px 2px 15px #D8216C;
+    overflow: hidden;
+    border: 2px solid #850C8E;
+    transition: var(--main-transition) ease-in-out;
+}
+
+.anime .mouth.fpassmove {
+    height: 23px !important;
+}
+
+.anime .mouth::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 14px;
+    border-radius: 10px 5px 10px 5px;
+    background-color: #f76e6e;
+    top: 9px;
+    left: 5px;
+}
+
+.anime .nose {
+    position: absolute;
+    top: 60px;
+    left: 70px;
+    border-width: 0px 4px 8px 4px;
+    border-style: solid;
+    border-color: transparent transparent #FF554D;
+    border-radius: 3px;
+    transition: var(--main-transition) linear;
+}
+
+.anime .flower {
+    width: 40px;
+    top: 30px;
+    left: 45px;
+    transform-origin: bottom center;
+    transition: 1s linear;
+    z-index: -1;
+    rotate: 0deg;
+}
+
+.anime .flower.checkedmove {
+    left: -12px;
+    animation: flowerinfmove 3s 2s alternate infinite linear, flowermove 2s alternate ease-in-out;
+}
+
+.anime .flower.rotate {
+    rotate: 30deg;
+}
+
+@keyframes flowerinfmove {
+    from {
+        transform: rotate(-5deg);
+    }
+    to {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes flowermove {
+    0% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+form .email,
+form .password {
+    position: relative;
+}
+
+form .formlabel {
+    position: absolute;
+    top: 11px;
+    left: 10px;
+    cursor: inherit;
+    transition: 0.3s ease;
+    color: #777;
+    font-weight: 600;
+}
+
+form .forminput {
+    border-bottom: 2px solid #972983;
+    max-width: 100%;
+    width: 500px;
+    letter-spacing: 1.3px;
+    padding: 10px;
+    background-color: transparent;
+    position: relative;
+}
+
+form .forminput:focus {
+    outline: 0;
+}
+
+form .email .forminput {
+    margin-bottom: 30px;
+}
+
+form .pass-input {
+    position: relative;
+}
+
+form .pass-input i {
+    position: absolute;
+    right: 10px;
+    top: 16px;
+    cursor: pointer;
+    color: #777;
+}
+
+form .pass-input i:first-of-type {
+    display: none;
+}
+
+form .links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+form .links label {
+    color: #777;
+    display: flex;
+}
+
+.toggle-checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+form .links .toggle-box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #972983;
+    display: inline-block;
+    position: relative;
+    margin-right: 8px;
+}
+
+form .links .toggle-box::before {
+    font: var(--fa-font-solid);
+    content: "\f00c";
+    position: absolute;
+    color: white;
+    font-size: 15px;
+    top: 6%;
+    left: 6%;
+}
+
+.toggle-checkbox:checked + .toggle-box {
+    background-color: #972983;
+}
+
+form .links a {
+    color: #777;
+    padding-bottom: 5px;
+}
+
+form .links a:hover {
+    color: #972983;
+}
+
+form .emailedmsg {
+    display: none;
+    margin: 5px 0 0 10px;
+    color: #972983;
+}
+
+[type="submit"] {
+    color: white;
+    font-weight: bold;
+    padding: 10px 0;
+    margin-top: 20px;
+    max-width: 100%;
+    width: 500px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: #972983;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+[type='submit']:hover {
+    background-color: #b4299b;
+}
+
+form .signup {
+    text-align: center;
+}
+
+form .signup a {
+    color: #972983;
+}

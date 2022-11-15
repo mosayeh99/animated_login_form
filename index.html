@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Animated Login Form">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap"
+        rel="stylesheet">
+    <title>Form</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <form action="">
+            <h2 class="formhead">User Login</h2>
+        <div class="anime moveanime">
+            <img class="body fpass-body" src="assets/fpassbody.png" alt="">
+            <img class="body n-body" src="assets/body.png" alt="">
+            <div class="passface">
+                <img class="pf-img moveanime" src="assets/passface.png" alt="">
+                <img class="pf-eyelip" src="assets/passface-eyelip.png" alt="">
+                <img class="pf-leg moveanime" src="assets/passleg.png" alt="">
+            </div>
+            <div class="fpassface">
+                <img class="l-xeye" src="assets/xeye.png" alt="">
+                <img class="r-xeye" src="assets/xeye.png" alt="">
+            </div>
+            <div class="face moveanime">
+                <img class="l-brow" src="assets/brow.png" alt="">
+                <img class="r-brow" src="assets/brow.png" alt="">
+                <div class="l-eye">
+                    <div class="l-eyeup eyemove"></div>
+                    <div class="l-eyedown eyemove"></div>
+                    <img src="assets/eyelens.png" alt="">
+                </div>
+                <div class="r-eye">
+                    <div class="r-eyeup eyemove"></div>
+                    <div class="r-eyedown eyemove"></div>
+                    <img src="assets/eyelens.png" alt="">
+                </div>
+                <div class="mouth"></div>
+                <div class="nose"></div>
+            </div>
+            <img class="leg moveanime" src="assets/fpassleg.png" alt="">
+            <img class="leg n-leg moveanime" src="assets/leg.png" alt="">
+            <img  class="l-fpasswing" src="assets/l-fpasswing.png" alt="">
+            <img  class="r-fpasswing r-wing" src="assets/r-fpasswing.png" alt="">
+            <img class="l-wing moveanime" src="assets/l-wing.png" alt="">
+            <img class="r-wing" src="assets/r-wing.png" alt="">
+            <img class="crest moveanime" src="assets/crest.png" alt="">
+            <img class="tail" src="assets/fpasstail.png" alt="">
+            <img class="tail n-tail" src="assets/tail.png" alt="">
+            <img class="flower" src="assets/flower.png" alt="">
+        </div>
+        <div class="email">
+            <label class="formlabel emaillabel">Email</label>
+            <input type="email" class="forminput" maxlength="30">
+        </div>
+        <div class="password">
+            <label class="formlabel passlabel">Password</label>
+            <div class="pass-input">
+                <input type="password" class="forminput">
+                <i class="fa-solid fa-eye-slash hide-pass"></i>
+                <i class="fa-solid fa-eye show-pass"></i>
+                <div class="emailedmsg">
+                    <p>we have e-mailed your password reset link!</p>
+                </div>
+            </div>
+            <div class="links">
+                <label>
+                    <input class="toggle-checkbox" type="checkbox">
+                    <div class="toggle-box"></div>
+                    Remember me
+                </label>
+                <a href="#">Forget Password?</a>
+            </div>
+        </div>
+        <input type="submit" value="Login">
+        <p class="signup">Dont have an account? <a href="#">Sign Up</a></p>
+    </form>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
